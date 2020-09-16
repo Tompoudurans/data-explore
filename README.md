@@ -51,7 +51,7 @@ The following commands will download and install the software
 
 After installation,
 For any `<table>` within a `<database>` sql file, the tool can be run entering the following command:
-    $ data-explore --target=<database> --table=<table> --output=<log>
+    $ python -m dataexplorer --target=<database> --table=<table> --output=<log>
 
 The `<log>` file  produced by this command will contain all the information about the general structure of the `<table>` held in <`database`>.
 
