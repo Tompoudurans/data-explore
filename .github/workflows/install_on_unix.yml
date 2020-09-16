@@ -32,7 +32,7 @@ jobs:
         python -m dataexplorer --help
     - name: Create data
       run: |
-        python test\randomdatagen.py
+        python test/randomdatagen.py
     - name: Check that main command runs
       run: |
         python -m dataexplorer --target=flight --table=readings --output=readtest.log
