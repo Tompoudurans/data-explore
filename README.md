@@ -55,6 +55,7 @@ To confirm installation was successful run the following:
 
 After installation,
 For any `<table>` within a `<database>` sql file, the tool can be run entering the following command:
+
     $ python -m dataexplorer --target=<database> --table=<table> --output=<log>
 
 The `<log>` file  produced by this command will contain all the information about the general structure of the `<table>` held in <`database`>.
@@ -63,5 +64,6 @@ The `<log>` file  produced by this command will contain all the information abou
 
 If the tool needs to be tested after installing, enter the following commands:
 
-  $  python -m pip install pytest. # If pytest is not already installed
-  $  python -m pytest -p no:logging
+  `$  python -m pip install pytest.` If pytest is not already installed
+
+  `$  python -m pytest -p no:logging`
