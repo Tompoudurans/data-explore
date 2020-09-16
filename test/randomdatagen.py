@@ -63,5 +63,6 @@ def generate_random_testing_data(size):
         connection.execute(sql, values)
     return pd.read_sql("readings", connection)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     generate_random_testing_data(10)
