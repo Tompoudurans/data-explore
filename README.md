@@ -47,6 +47,10 @@ The following commands will download and install the software
     $ python setup.py develop
 
 
+To confirm installation was successful run the following:
+
+    $ python -m dataexplorer --help
+
 ### Utilisation
 
 After installation,
