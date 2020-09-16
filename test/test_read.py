@@ -10,7 +10,7 @@ def test_load_sql():
     """
     if not os.path.isfile("flight.db"):
         generate_random_testing_data(20)
-    df = dataexplorer.load_sql("flight", "readings")
+    df = dataexplorer.load_sql("flight.db", "readings")
     assert isinstance(df, pandas.DataFrame)
 
 

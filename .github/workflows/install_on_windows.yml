@@ -35,4 +35,4 @@ jobs:
         python test\randomdatagen.py
     - name: Check that main command runs
       run: |
-        python -m dataexplorer --target=flight --table=readings --output=readtest.log
+        python -m dataexplorer --target=flight.db --table=readings --output=readtest.log

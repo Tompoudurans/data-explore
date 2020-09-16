@@ -29,7 +29,7 @@ def load_sql(file, table):
     """
     loads an SQL table and saves on a pandas dataframe
     """
-    engine = sa.create_engine("sqlite:///" + file + ".db")
+    engine = sa.create_engine("sqlite:///" + file)
     connection = engine.connect()
     database = pd.read_sql(table, connection)
     return database

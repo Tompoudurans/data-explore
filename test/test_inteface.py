@@ -41,7 +41,7 @@ def test_main_func():
             "python",
             "-m",
             "dataexplorer",
-            "--target=flight",
+            "--target=flight.db",
             "--table=readings",
             "--output=testing.log",
         ]

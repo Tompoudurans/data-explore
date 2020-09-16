@@ -13,7 +13,7 @@ def test_make_log_file():
         log_file.unlink()
     if not os.path.isfile("flight.db"):
         generate_random_testing_data(20)
-    set = dataexplorer.load_sql("flight", "readings")
+    set = dataexplorer.load_sql("flight.db", "readings")
     stats = dataexplorer.get_stats(set)
     dataexplorer.make_log_file(stats, "secondtest.log")
     assert os.path.isfile("secondtest.log")
