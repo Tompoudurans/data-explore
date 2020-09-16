@@ -60,4 +60,4 @@ The `<log>` file  produced by this command will contain all the information abou
 If the tool needs to be tested after installing, enter the following commands:
 
   $  python -m pip install pytest. # If pytest is not already installed
-  $  python -m pytest
+  $  python -m pytest -p no:logging

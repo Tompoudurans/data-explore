@@ -30,3 +30,6 @@ jobs:
     - name: Check that help command runs
       run: |
         python -m dataexplorer --help
+    - name: Chech that main command runs
+      run: |
+        python -m dataexplorer --target=flight --table=readings --output=readtest.log
