@@ -62,8 +62,10 @@ The `<log>` file  produced by this command will contain all the information abou
 
 ### Test
 
-If the tool needs to be tested after installing, enter the following commands:
+The tool is tested using the Python testing framework pyrest. To install pytest:
 
-  `$  python -m pip install pytest.` If pytest is not already installed
+    $ python -m pip install pytest
+    
+To run the tests:    
 
-  `$  python -m pytest -p no:logging`
+    $  python -m pytest -p no:logging
