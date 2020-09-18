@@ -20,9 +20,9 @@ def generate_random_testing_data(size):
         ts        TIMESTAMP NOT NULL,
         temp      NUMERIC(3,1) NOT NULL,
         pressure  NUMERIC(4,0) NOT NULL,
-        humidity  NUMERIC(3,0) NOT NULL, 
+        humidity  NUMERIC(3,0) NOT NULL,
         wind    VARCHAR(10) NOT NULL,
-    
+
         CONSTRAINT readings_pk PRIMARY KEY (flight, ts),
         CONSTRAINT temp_ck CHECK (temp BETWEEN -70 AND 70),
         CONSTRAINT pres_ck CHECK (pressure BETWEEN 0 AND 2000),
@@ -62,3 +62,7 @@ def generate_random_testing_data(size):
         )
         connection.execute(sql, values)
     return pd.read_sql("readings", connection)
+
+
+if __name__ == "__main__":
+    generate_random_testing_data(10)

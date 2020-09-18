@@ -1,6 +1,6 @@
-name: data exprore testing
+name: data explore testing
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
   build:

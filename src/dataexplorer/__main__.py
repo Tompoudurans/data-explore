@@ -5,12 +5,20 @@ import logging
 
 
 @click.command()
-@click.option("--target", help="the file that you want to import")
-@click.option("--table", help="what table you are using")
-@click.option("--output", help="the file that you are saving as")
+@click.option(
+    "--target",
+    help="Insert here the name of the database file that you want to import it needs to be in .db format",
+)
+@click.option(
+    "--table", help="Insert here the table within the database that need to be analysed"
+)
+@click.option(
+    "--output",
+    help="Insert here the name of the output file, this name needs to end with .log",
+)
 def main(target, table, output):
     """
-    read data and logs it
+    reads data and saves basic stats for the dataset into a log file
     """
     data = load_sql(target, table)
     stats = get_stats(data)
@@ -19,9 +27,9 @@ def main(target, table, output):
 
 def load_sql(file, table):
     """
-    Loads an SQL table
+    loads an SQL table and saves on a pandas dataframe
     """
-    engine = sa.create_engine("sqlite:///" + file + ".db")
+    engine = sa.create_engine("sqlite:///" + file)
     connection = engine.connect()
     database = pd.read_sql(table, connection)
     return database

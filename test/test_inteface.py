@@ -8,12 +8,18 @@ from randomdatagen import generate_random_testing_data
 def test_help():
     exp_output = b"""Usage: __main__.py [OPTIONS]
 
-  read data and logs it
+  reads data and saves basic stats for the dataset into a log file
 
 Options:
-  --target TEXT  the file that you want to import
-  --table TEXT   what table you are using
-  --output TEXT  the file that you are saving as
+  --target TEXT  Insert here the name of the database file that you want to
+                 import it needs to be in .db format
+
+  --table TEXT   Insert here the table within the database that need to be
+                 analysed
+
+  --output TEXT  Insert here the name of the output file, this name needs to
+                 end with .log
+
   --help         Show this message and exit.
 """
     current_output = subprocess.run(
@@ -35,7 +41,7 @@ def test_main_func():
             "python",
             "-m",
             "dataexplorer",
-            "--target=flight",
+            "--target=flight.db",
             "--table=readings",
             "--output=testing.log",
         ]
