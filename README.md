@@ -3,11 +3,6 @@
 The tool computes:
 the number of records in a table of a given database (count), the mean value of all records in the table (mean) as well as their standard deviation (std), and their (0%, 25%, 50%, 75%, 100%) quartile
 
-### Required softwares
-
-To be able to install the software, it is necessary first to have a version of git (any version)
-as well as a version of python 3.7 or 3.8 (this software has not been tested for further versions).
-Also its is important that pip is installed.
 
 ### Installation
 
