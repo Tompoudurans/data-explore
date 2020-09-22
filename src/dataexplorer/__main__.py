@@ -10,7 +10,7 @@ import logging
     help="Insert here the name of the database file that you want to import it needs to be in .db format",
 )
 @click.option(
-    "--table", help="Insert here the table within the database that need to be analysed"
+    "--table", help="Insert here the table within the database that need to be analysed", default=None
 )
 @click.option(
     "--output",
@@ -20,8 +20,11 @@ def main(target, table, output):
     """
     reads data and saves basic stats for the dataset into a log file
     """
-    data = load_sql(target, table)
-    stats = get_stats(data)
+    if table == None:
+        stats = all_tables(target)
+    else:
+        data = load_sql(target, table)
+        stats = get_stats(data)
     make_log_file(stats, output)
 
 
@@ -34,6 +37,18 @@ def load_sql(file, table):
     database = pd.read_sql(table, connection)
     return database
 
+def all_tables(file):
+    """
+    Reads all tables
+    """
+    stats = []
+    engine = sa.create_engine("sqlite:///" + file)
+    connection = engine.connect()
+    inspector = sa.inspect(engine)
+    for table in inspector.get_table_names():
+        database = pd.read_sql(table, connection)
+        stats.append(get_stats(database))
+    return stats
 
 def get_stats(data):
     """
